@@ -5,8 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
 	public Player player;
-	public float speed;
-	private float step;
+	//public float speed;
+	//private float step;
 	float xDif, yDif, minX, minY, maxX, maxY;
 	Vector3 pos;
 
@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		step = speed * Time.deltaTime;
+		//step = speed * Time.deltaTime;
 		Vector3 lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
 		Vector3 upperRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 		minX = lowerLeft.x;
@@ -31,7 +31,6 @@ public class Movement : MonoBehaviour {
 			pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			if(Input.GetTouch(0).phase == TouchPhase.Began)
 			{
-				print("Pos " + pos);
 				xDif = player.transform.localPosition.x - pos.x;
 				yDif = player.transform.localPosition.y - pos.y;
 			}
@@ -44,31 +43,17 @@ public class Movement : MonoBehaviour {
                 if (newPos.y > maxY) newPos.y = maxY;            
 				player.transform.localPosition = newPos;
 			}
+			if (Input.touchCount == 2)
+			{
+				player.Fire = true;
+			}
+			if (Input.touchCount == 1)
+			{
+				xDif = player.transform.localPosition.x - pos.x;
+                yDif = player.transform.localPosition.y - pos.y;
+                player.Fire = false;
+				return;
+			}
 		}
-
-
-
-
-
-
-
-        //Correct translation
-		/*if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            print("Touch Screen : " + Input.GetTouch(0).position);
-            Vector3 Pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-			player.transform.localPosition = new Vector3(Pos.x, Pos.y, 0);
-            print("Pos " + Pos);
-        }*/
-
-
-
-
-			//this works kind of
-			/*Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-			Vector2 playerNewPosition = new Vector2((player.transform.position.x + touchDeltaPosition.x), (player.transform.position.y + touchDeltaPosition.y));
-			player.transform.position = Vector2.MoveTowards(player.transform.position, playerNewPosition, step);*/
-
-			//second try
 	}
 }
