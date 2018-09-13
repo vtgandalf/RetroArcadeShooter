@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour {
 			{
 				xDif = player.transform.localPosition.x - pos.x;
                 yDif = player.transform.localPosition.y - pos.y;
-                player.Fire = false;
+				player.Fire = false;
 				return;
 			}
 		}

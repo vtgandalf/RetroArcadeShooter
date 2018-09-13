@@ -18,7 +18,6 @@ public class ProjManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-		FireRate();
 		if (player != null)
 		{
 			if (player.Fire == true) FireRate();
