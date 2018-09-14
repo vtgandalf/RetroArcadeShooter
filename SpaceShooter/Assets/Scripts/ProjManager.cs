@@ -12,7 +12,7 @@ public class ProjManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-		
+		FireRate();
     }
     
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class ProjManager : MonoBehaviour {
 		{
 			if (player.Fire == true) FireRate();
 		}
+		FireRate();
     }
    
 	void Fire()
@@ -32,7 +33,7 @@ public class ProjManager : MonoBehaviour {
 		missile.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,1f) * shotSpeed;
 
         // Destroy the bullet after 2 seconds
-        Destroy(missile, 5.0f);
+        //Destroy(missile, 5.0f);
     }
 
     void FireRate()

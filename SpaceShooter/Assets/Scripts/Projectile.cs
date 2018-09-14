@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 	private float x, y, z;
+	private bool seen = false;
     // Use this for initialization
     void Start()
     {
@@ -14,6 +15,8 @@ public class Projectile : MonoBehaviour {
     void Update()
     {
         UpdatePos();
+		UpdateRotation();
+		OffScreenCheck();
     }
 
     public float Z
@@ -63,5 +66,33 @@ public class Projectile : MonoBehaviour {
             }
         }
         
+    }
+
+    void UpdateRotation()
+	{
+		Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+		Vector2 velocity = rb.velocity.normalized;
+		float timeCount = Time.deltaTime;
+		//Debug.Log(velocity);
+		float rotationFactor = velocity.x*360;
+        Debug.Log(rotationFactor);
+
+		float currentRotZ = rb.transform.rotation.z;
+		float currentRotX = rb.transform.rotation.x;
+		float currentRotY = rb.transform.rotation.y;
+
+		Quaternion target = Quaternion.Euler(0f, 0f, rotationFactor);
+
+		rb.transform.rotation = Quaternion.Slerp(transform.rotation, target, timeCount);
+	}
+    
+	void OffScreenCheck()
+    {
+		Renderer renderer = this.gameObject.GetComponentInChildren<Renderer>();
+        if (renderer.isVisible)
+            seen = true;
+
+        if (seen && !renderer.isVisible)
+            Destroy(gameObject);
     }
 }

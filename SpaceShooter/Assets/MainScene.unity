@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &618479683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   projPrefab: {fileID: 1947545320418858, guid: 032b8393b4e9e4ed998d2cf51d8dcdd0, type: 2}
   projSpawn: {fileID: 254017403}
   player: {fileID: 0}
-  shotSpeed: -2
+  shotSpeed: -1.5
   interpolationPeriod: 0.3
 --- !u!1 &1605173354
 GameObject:
@@ -724,6 +724,7 @@ GameObject:
   - component: {fileID: 1845269428}
   - component: {fileID: 1845269430}
   - component: {fileID: 1845269429}
+  - component: {fileID: 1845269433}
   - component: {fileID: 1845269432}
   - component: {fileID: 1845269431}
   m_Layer: 9
@@ -740,7 +741,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845269427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 1, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 73684755}
@@ -794,12 +795,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.09847851, y: 0.31999993}
-      - {x: -0.41847858, y: -0.035435677}
-      - {x: -0.24864411, y: -0.32369328}
-      - {x: 0.26288, y: -0.32601714}
-      - {x: 0.41821498, y: -0.025423288}
-      - {x: 0.1, y: 0.32}
+    - - {x: -0.10205531, y: 0.28658855}
+      - {x: -0.16634881, y: 0.22950602}
+      - {x: -0.1638453, y: 0.0615232}
+      - {x: -0.3034593, y: 0.04718852}
+      - {x: -0.3958552, y: -0.050518036}
+      - {x: -0.23356181, y: -0.30106997}
+      - {x: 0.26287997, y: -0.3033936}
+      - {x: 0.38805044, y: -0.05558777}
+      - {x: 0.31049573, y: 0.033560038}
+      - {x: 0.17423058, y: 0.050461054}
+      - {x: 0.16840017, y: 0.21541464}
+      - {x: 0.100000024, y: 0.28983533}
 --- !u!50 &1845269432
 Rigidbody2D:
   serializedVersion: 4
@@ -811,7 +818,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -820,6 +827,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1845269433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845269427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac2a4e414f4b46df80e6859c14aed19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1845269432}
 --- !u!1 &1893296581
 GameObject:
   m_ObjectHideFlags: 0
