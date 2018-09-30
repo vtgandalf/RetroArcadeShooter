@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="laserGunCustomSound_data" version="1.3.0" audacityversion="2.2.1" sel0="0.0000000000" sel1="0.1668480726" vpos="0" h="0.0000000000" zoom="1120.7750582751" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Software" value="Lavf57.56.101"/>
+		<tag name="compatible_brands" value="isommp42"/>
+		<tag name="major_brand" value="mp42"/>
+		<tag name="minor_version" value="0"/>
+	</tags>
+	<wavetrack name="Laser Gun SOUND EFFECT - Laser Waffe Pistole SOUNDS" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="7358">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000edd.au" len="7358" min="-0.727062" max="0.859455" rms="0.128349"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Laser Gun SOUND EFFECT - Laser Waffe Pistole SOUNDS" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="7358">
+				<waveblock start="0">
+					<simpleblockfile filename="e00005b3.au" len="7358" min="-0.727062" max="0.859455" rms="0.128349"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

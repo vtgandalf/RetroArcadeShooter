@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
 	public Player player;
+	public OrbitActivation orbit;
 	//public float speed;
 	//private float step;
 	float xDif, yDif, minX, minY, maxX, maxY;
@@ -45,13 +46,19 @@ public class Movement : MonoBehaviour {
 			}
 			if (Input.touchCount == 2)
 			{
-				player.Fire = true;
+				if (orbit.Trig) 
+				{
+					player.orbit = true;
+				}
+				if (!player.orbit) player.Fire = true;
 			}
 			if (Input.touchCount == 1)
 			{
 				xDif = player.transform.localPosition.x - pos.x;
                 yDif = player.transform.localPosition.y - pos.y;
 				player.Fire = false;
+				player.orbit = false;
+				orbit.Trig = false;
 				return;
 			}
 		}
