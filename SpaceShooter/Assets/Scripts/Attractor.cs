@@ -72,7 +72,8 @@ public class Attractor : MonoBehaviour
 			if (rbToAttract.gameObject.GetComponent<Attractor>())
 			{
 				rbToAttract.gameObject.GetComponent<Attractor>().enabled = false;
-				Debug.Log(rbToAttract.gameObject.GetComponent<Attractor>().enabled);
+				rbToAttract.gameObject.transform.parent = null;
+				//Debug.Log(rbToAttract.gameObject.GetComponent<Attractor>().enabled);
 			}
 		}
 		else if (rbToAttract.gameObject.GetComponent<Attractor>().enabled != false) Orbit(rbToAttract.transform, speed);

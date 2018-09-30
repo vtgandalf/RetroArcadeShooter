@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565585041786602}
   - component: {fileID: 114395436027840076}
-  - component: {fileID: 114172421380179892}
+  - component: {fileID: 114935426581738566}
   - component: {fileID: 50091918985074414}
   - component: {fileID: 61771299512006174}
   m_Layer: 11
@@ -118,19 +118,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &114172421380179892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1550090259713774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a414e05f7b5124524875a782717a75ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  player: {fileID: 0}
 --- !u!114 &114395436027840076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,7 +130,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 50091918985074414}
-  orbitRange: 1
+--- !u!114 &114935426581738566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550090259713774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a414e05f7b5124524875a782717a75ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  weaponStep: 0.2
+  darkMatterStep: 0.25
 --- !u!212 &212511616842439598
 SpriteRenderer:
   m_ObjectHideFlags: 1

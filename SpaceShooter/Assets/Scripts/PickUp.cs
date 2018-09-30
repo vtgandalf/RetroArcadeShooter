@@ -12,6 +12,8 @@ public class PickUp : MonoBehaviour {
     private bool seen = false;
     private AudioManager audioManager;
 	public FunctionTypes type;
+	public float weaponStep;
+	public float darkMatterStep;
     // Use this for initialization
     void Start()
     {
@@ -37,8 +39,8 @@ public class PickUp : MonoBehaviour {
             {
                 if (audioManager != null) audioManager.PlayHit();
                 Destroy(this.gameObject);
-				if (type == FunctionTypes.DarkMatter) player.IncrementMass(1f);
-                if (type == FunctionTypes.Weapon) player.IncrementFireRate();
+				if (type == FunctionTypes.DarkMatter) player.IncrementMass(darkMatterStep);
+				if (type == FunctionTypes.Weapon) player.IncrementFireRate(weaponStep);
        
                 //Destroy(col.gameObject);
                 //Debug.Log("player");

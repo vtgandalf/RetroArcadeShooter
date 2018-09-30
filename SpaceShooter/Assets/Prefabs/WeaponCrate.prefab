@@ -130,7 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  player: {fileID: 0}
+  weaponStep: 0.2
+  darkMatterStep: 0.25
 --- !u!114 &114836781372277426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,7 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 50854030254076474}
-  orbitRange: 1
 --- !u!212 &212377798067247990
 SpriteRenderer:
   m_ObjectHideFlags: 1

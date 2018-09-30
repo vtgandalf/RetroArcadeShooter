@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4656677207861520}
   - component: {fileID: 114233821019663858}
   - component: {fileID: 114317402074769720}
-  - component: {fileID: 114892117513235432}
+  - component: {fileID: 114151505006452370}
   - component: {fileID: 50433270187044304}
   - component: {fileID: 60272219208080048}
   m_Layer: 8
@@ -123,6 +123,23 @@ PolygonCollider2D:
       - {x: 0.01, y: -0.42}
       - {x: 0.01, y: -0.42}
       - {x: 0.34, y: 0.42}
+--- !u!114 &114151505006452370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1754634161908746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bddf225f14cd4830bb7acc80cf458c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initSpeed: 1
+  audioManager: {fileID: 0}
+  pickUpPrefabWeapon: {fileID: 114106855664221502, guid: 1f37d495085e74263a3977bc16fa26de,
+    type: 2}
+  pickUpPrefabDarkMatter: {fileID: 114935426581738566, guid: 7a386a6cc818a4741a60b4f7abd0afd7,
+    type: 2}
 --- !u!114 &114233821019663858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f8c1f2570524a8898a840016a6663a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpManager: {fileID: 114892117513235432}
+  pickUpManager: {fileID: 114151505006452370}
 --- !u!114 &114317402074769720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,26 +166,9 @@ MonoBehaviour:
   projSpawn: {fileID: 4656677207861520}
   enemyFire: 1
   shotSpeed: -3
-  interpolationPeriod: 0.3
+  interpolationPeriod: 0.5
   audioManager: {fileID: 0}
   projPrefab: {fileID: 114851006686976616, guid: 032b8393b4e9e4ed998d2cf51d8dcdd0,
-    type: 2}
---- !u!114 &114892117513235432
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1754634161908746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bddf225f14cd4830bb7acc80cf458c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initSpeed: -1
-  audioManager: {fileID: 0}
-  pickUpPrefabWeapon: {fileID: 114106855664221502, guid: 1f37d495085e74263a3977bc16fa26de,
-    type: 2}
-  pickUpPrefabDarkMatter: {fileID: 114172421380179892, guid: 7a386a6cc818a4741a60b4f7abd0afd7,
     type: 2}
 --- !u!212 &212927052861952878
 SpriteRenderer:

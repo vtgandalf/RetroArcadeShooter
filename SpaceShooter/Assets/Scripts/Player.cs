@@ -37,14 +37,14 @@ public class Player : MonoBehaviour {
 		if (rb != null)
 		{
 			rb.mass = rb.mass + step;
-			OrbitRange = OrbitRange + 0.1f;
+			OrbitRange += 0.05f;
 			Debug.Log("mass was increased");
 		}
 		else Debug.Log("mass was not increased");
 	}
     
-    public void IncrementFireRate()
+    public void IncrementFireRate(float step)
 	{
-		projManager.interpolationPeriod = projManager.interpolationPeriod - 0.1f;
+		projManager.interpolationPeriod = projManager.interpolationPeriod - step;
 	}
 }

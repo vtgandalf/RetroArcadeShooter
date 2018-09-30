@@ -28,7 +28,7 @@ public class PickUpManager : MonoBehaviour {
         // Create the pickUp from the prefab
 		var pickUp = (PickUp)Instantiate(picks[rndm.Next(0,picks.Count)], pickUpSpawn.position, pickUpSpawn.rotation);
         // Add velocity to the object
-		pickUp.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 1f) * initSpeed;
+		pickUp.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -1f) * initSpeed;
         audioManager.PlayGun();
     }
 }

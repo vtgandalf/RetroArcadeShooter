@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ProjManager.cs" />
      <Compile Include="Assets\Scripts\ScrollSpace.cs" />
+     <Compile Include="Assets\Scripts\SimpleSceneChanger.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>/home/valeri/GIT/RetroArcadeShooter/SpaceShooter/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
