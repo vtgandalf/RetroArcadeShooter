@@ -13,8 +13,17 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		
 	}
+
 	void OnDestroy()
     {
 		pickUpManager.Spawn();
     }
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.tag == "border")
+        {
+            Destroy(gameObject);
+        }
+	}
 }

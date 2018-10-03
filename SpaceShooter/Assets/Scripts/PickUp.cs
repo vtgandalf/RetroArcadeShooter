@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        OffScreenCheck();
+		
     }
     
     void OnTriggerEnter2D(Collider2D col)
@@ -46,15 +46,9 @@ public class PickUp : MonoBehaviour {
                 //Debug.Log("player");
             }
         }
-    }
-
-    void OffScreenCheck()
-    {
-        Renderer renderer = this.gameObject.GetComponentInChildren<Renderer>();
-        if (renderer.isVisible)
-            seen = true;
-
-        if (seen && !renderer.isVisible)
+		if (col.gameObject.tag == "border")
+        {
             Destroy(gameObject);
+        }
     }
 }

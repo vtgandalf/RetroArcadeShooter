@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 	private bool fire = false;
@@ -46,5 +47,10 @@ public class Player : MonoBehaviour {
     public void IncrementFireRate(float step)
 	{
 		projManager.interpolationPeriod = projManager.interpolationPeriod - step;
+	}
+
+    void OnDestroy()
+	{
+		SceneManager.LoadScene("menuBase", LoadSceneMode.Single);
 	}
 }

@@ -15,44 +15,38 @@ public class Projectile : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	void FixUpdate()
 	{
-		OffScreenCheck();
+		
 	}
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
+	void OnTriggerEnter2D(Collider2D col)
+	{
 		//Debug.Log("collider");
 		LayerMask layer = this.gameObject.layer;
-		if(layer == LayerMask.NameToLayer("Enemy"))
+		if (layer == LayerMask.NameToLayer("Enemy"))
 		{
 			if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
 			{
 				if (audioManager != null) audioManager.PlayHit();
 				Destroy(this.gameObject);
-                Destroy(col.gameObject);
-                //Debug.Log("player");
-            }
+				Destroy(col.gameObject);
+				//Debug.Log("player");
+			}
 		}
 		if (layer == LayerMask.NameToLayer("Player"))
-        {
-            if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+		{
+			if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
 			{
 				if (audioManager != null) audioManager.PlayHit();
 				Destroy(this.gameObject);
-                Destroy(col.gameObject);
-                //Debug.Log("enemy");
-            }
-        }
-    }
-
-	void OffScreenCheck()
-    {
-		Renderer renderer = this.gameObject.GetComponentInChildren<Renderer>();
-        if (renderer.isVisible)
-            seen = true;
-
-        if (seen && !renderer.isVisible)
+				Destroy(col.gameObject);
+				//Debug.Log("enemy");
+			}
+		}
+		if (col.gameObject.tag == "border")
+        {
             Destroy(gameObject);
-    }
+        }
+	}
 }
