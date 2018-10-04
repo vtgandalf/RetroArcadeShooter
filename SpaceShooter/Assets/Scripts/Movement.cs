@@ -6,16 +6,11 @@ public class Movement : MonoBehaviour {
 
 	public Player player;
 	public OrbitActivation orbit;
-	//public float speed;
-	//private float step;
 	float xDif, yDif, minX, minY, maxX, maxY;
 	Vector3 pos;
-
-
-
+       
 	// Use this for initialization
 	void Start () {
-		//step = speed * Time.deltaTime;
 		Vector3 lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
 		Vector3 upperRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 		minX = lowerLeft.x;

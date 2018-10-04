@@ -18,8 +18,6 @@ public class PickUp : MonoBehaviour {
     void Start()
     {
         audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
-        if (audioManager == null) Debug.Log("failed to assign audioManager");
-        else Debug.Log("audioManager assigned");
     }
 
     // Update is called once per frame
@@ -41,9 +39,6 @@ public class PickUp : MonoBehaviour {
                 Destroy(this.gameObject);
 				if (type == FunctionTypes.DarkMatter) player.IncrementMass(darkMatterStep);
 				if (type == FunctionTypes.Weapon) player.IncrementFireRate(weaponStep);
-       
-                //Destroy(col.gameObject);
-                //Debug.Log("player");
             }
         }
 		if (col.gameObject.tag == "border")

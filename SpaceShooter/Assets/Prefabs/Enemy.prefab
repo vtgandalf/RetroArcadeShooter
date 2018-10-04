@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpManager: {fileID: 114151505006452370}
+  weaponLevel: 0
 --- !u!114 &114317402074769720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,11 +166,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projSpawn: {fileID: 4656677207861520}
   enemyFire: 1
-  shotSpeed: -2
+  shotSpeed: -3
   interpolationPeriod: 2
   audioManager: {fileID: 0}
   projPrefab: {fileID: 114851006686976616, guid: 032b8393b4e9e4ed998d2cf51d8dcdd0,
     type: 2}
+  weaponOffset: 0.25
+  weaponAngle: 0.25
 --- !u!212 &212927052861952878
 SpriteRenderer:
   m_ObjectHideFlags: 1

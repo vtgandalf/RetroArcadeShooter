@@ -10,8 +10,6 @@ public class Projectile : MonoBehaviour
 	void Start()
 	{
 		audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
-		if (audioManager == null) Debug.Log("failed to assign audioManager");
-		else Debug.Log("audioManager assigned");
 	}
 
 	// Update is called once per frame
@@ -31,7 +29,6 @@ public class Projectile : MonoBehaviour
 				if (audioManager != null) audioManager.PlayHit();
 				Destroy(this.gameObject);
 				Destroy(col.gameObject);
-				//Debug.Log("player");
 			}
 		}
 		if (layer == LayerMask.NameToLayer("Player"))
@@ -41,7 +38,6 @@ public class Projectile : MonoBehaviour
 				if (audioManager != null) audioManager.PlayHit();
 				Destroy(this.gameObject);
 				Destroy(col.gameObject);
-				//Debug.Log("enemy");
 			}
 		}
 		if (col.gameObject.tag == "border")

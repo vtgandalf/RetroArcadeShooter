@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  weaponStep: 0.2
+  weaponStep: 0.04
   darkMatterStep: 0.25
 --- !u!212 &212511616842439598
 SpriteRenderer:

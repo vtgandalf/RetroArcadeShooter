@@ -31,10 +31,6 @@ public class Attractor : MonoBehaviour
 		float forceMagnitude = (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 2);
 		Vector2 force = direction.normalized * forceMagnitude;
 
-		/*if(distance < 1.5)
-		{
-			rbToAttract.AddForce(force);
-		}*/
 		if (this.GetComponent<Player>() != null)
 		{
 			if (distance > this.GetComponent<Player>().OrbitRange && objToAttract.gameObject.layer != 9)
@@ -73,10 +69,8 @@ public class Attractor : MonoBehaviour
 			{
 				rbToAttract.gameObject.GetComponent<Attractor>().enabled = false;
 				rbToAttract.gameObject.transform.parent = null;
-				//Debug.Log(rbToAttract.gameObject.GetComponent<Attractor>().enabled);
 			}
 		}
-		else if (rbToAttract.gameObject.GetComponent<Attractor>().enabled != false) Orbit(rbToAttract.transform, speed);
-
+		else if (rbToAttract.gameObject.GetComponent<Attractor>().enabled != false) Orbit(rbToAttract.transform, speed);      
 	}
 }
