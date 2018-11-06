@@ -11,6 +11,8 @@ public enum WeaponLevel
 public class Player : MonoBehaviour {
 	public bool fire = false;
 	public bool orbit = false;
+	public Progress progressMassManager;
+	public Progress progressWeaponManager;
     private int massProgressCounter;
 	private int weaponProgressCounter;
 	private float orbitRange;
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour {
 			OrbitRange += 0.05f;
 			MassProgressCounter += 10;
 		}
+		progressMassManager.Value = MassProgressCounter;
 	}
     
     public void IncrementFireRate(float step)
@@ -95,6 +98,7 @@ public class Player : MonoBehaviour {
 			WeaponProgressCounter = 0;
 			UpdateWeaponLevel();
 		}
+        progressWeaponManager.Value = WeaponProgressCounter;
 	}
 
     void OnDestroy()
@@ -104,7 +108,9 @@ public class Player : MonoBehaviour {
 
     public void UpdateWeaponLevel()
 	{
+		Handheld.Vibrate();
 		if (weaponLevel == WeaponLevel.Quad) weaponLevel = WeaponLevel.Single;
 		else weaponLevel++;
+		progressWeaponManager.WeaponLevelIndicator(WeaponLevel);
 	}
 }

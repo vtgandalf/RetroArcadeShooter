@@ -5,6 +5,27 @@ sceneSetups:
 - path: Assets/menuBase.unity
   isLoaded: 0
   isActive: 0
+- path: Assets/menuBase.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/menuBase.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/menuBase.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/menuBase.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/menuBase.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/menuBase.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/menuBase.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/FirstLevel.unity
   isLoaded: 1
   isActive: 1

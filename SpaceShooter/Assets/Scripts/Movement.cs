@@ -8,9 +8,11 @@ public class Movement : MonoBehaviour {
 	public OrbitActivation orbit;
 	float xDif, yDif, minX, minY, maxX, maxY;
 	Vector3 pos;
+	private float tapTimer;
        
 	// Use this for initialization
 	void Start () {
+		tapTimer = 0f;
 		Vector3 lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
 		Vector3 upperRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
 		minX = lowerLeft.x;
@@ -22,40 +24,82 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		if(Input.touchCount > 0)
-		{
-			pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-			if(Input.GetTouch(0).phase == TouchPhase.Began)
-			{
-				xDif = player.transform.localPosition.x - pos.x;
-				yDif = player.transform.localPosition.y - pos.y;
-			}
-			if(Input.GetTouch(0).phase == TouchPhase.Moved)
-			{
-				Vector3 newPos = new Vector3(xDif + pos.x, yDif + pos.y, 0);
-				if (newPos.x < minX) newPos.x = minX;
-				if (newPos.y < minY) newPos.y = minY;
-				if (newPos.x > maxX) newPos.x = maxX;
-                if (newPos.y > maxY) newPos.y = maxY;            
-				player.transform.localPosition = newPos;
-			}
-			if (Input.touchCount == 2)
-			{
-				if (orbit.Trig) 
-				{
-					player.orbit = true;
-				}
-				if (!player.orbit) player.Fire = true;
-			}
-			if (Input.touchCount == 1)
-			{
-				xDif = player.transform.localPosition.x - pos.x;
-                yDif = player.transform.localPosition.y - pos.y;
-				player.Fire = false;
-				player.orbit = false;
-				orbit.Trig = false;
-				return;
-			}
-		}
+		MovementStyle2();
 	}
+
+    private void MovementStyle1()
+	{
+		if (Input.touchCount > 0)
+        {
+            pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                xDif = player.transform.localPosition.x - pos.x;
+                yDif = player.transform.localPosition.y - pos.y;
+            }
+            if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                Vector3 newPos = new Vector3(xDif + pos.x, yDif + pos.y, 0);
+                if (newPos.x < minX) newPos.x = minX;
+                if (newPos.y < minY) newPos.y = minY;
+                if (newPos.x > maxX) newPos.x = maxX;
+                if (newPos.y > maxY) newPos.y = maxY;
+                player.transform.localPosition = newPos;
+            }
+            if (Input.touchCount == 2)
+            {
+                if (orbit.Trig)
+                {
+                    player.orbit = true;
+                }
+                if (!player.orbit) player.Fire = true;
+            }
+            if (Input.touchCount == 1)
+            {
+                xDif = player.transform.localPosition.x - pos.x;
+                yDif = player.transform.localPosition.y - pos.y;
+                player.Fire = false;
+                player.orbit = false;
+                orbit.Trig = false;
+                return;
+            }
+        }
+	}
+
+    private void MovementStyle2()
+	{
+		if (Input.touchCount > 0)
+        {
+			tapTimer += Time.deltaTime;
+			Debug.LogError(tapTimer);
+            pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                xDif = player.transform.localPosition.x - pos.x;
+                yDif = player.transform.localPosition.y - pos.y;
+            }
+            if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                Vector3 newPos = new Vector3(xDif + pos.x, yDif + pos.y, 0);
+                if (newPos.x < minX) newPos.x = minX;
+                if (newPos.y < minY) newPos.y = minY;
+                if (newPos.x > maxX) newPos.x = maxX;
+                if (newPos.y > maxY) newPos.y = maxY;
+                player.transform.localPosition = newPos;
+            }
+			if (Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+				if(tapTimer <= 0.5f)
+				{
+					if (orbit.Trig)
+                    {
+						player.orbit =! player.orbit;
+                    }
+					if (!player.orbit) player.Fire =! player.Fire;
+				}
+				tapTimer = 0f;
+            }
+        }
+	}
+
 }

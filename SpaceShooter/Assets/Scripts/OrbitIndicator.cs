@@ -6,14 +6,14 @@ using UnityEngine;
 public class OrbitIndicator : MonoBehaviour
 {
 
-	private LineRenderer line;
+	public LineRenderer line;
 	private int segments;
     private float xradius;
     private float yradius;
 
     void Start()
     {
-		line = gameObject.GetComponent<LineRenderer>();
+		//line = this.gameObject.GetComponent<LineRenderer>();
 		segments = 20;
 		line.positionCount = (segments + 1);
         line.useWorldSpace = false;
