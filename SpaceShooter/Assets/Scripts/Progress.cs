@@ -74,8 +74,8 @@ public class Progress : MonoBehaviour
                 this.animatorSingle.SetBool("exit", false);
 				this.indicatorDouble.SetActive(false);
 				this.indicatorTripple.SetActive(false);            
-                this.animatorQuad.SetBool("exit", true);
-				this.indicatorQuad.SetActive(false);
+                this.animatorQuad.SetBool("exit", true);    
+				this.indicatorQuad.SetActive(false);            
                 break;
 			case WeaponLevel.Dual:
 				this.indicatorDouble.SetActive(true); 

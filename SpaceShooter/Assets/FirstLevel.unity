@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 61544482}
   - component: {fileID: 61544484}
   m_Layer: 5
-  m_Name: WeaponProgressBackground
+  m_Name: WeaponProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61544480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 90.625, y: 95, z: 0}
+  m_LocalPosition: {x: 81.625, y: 79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 221926469}
@@ -171,7 +171,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 969716a9b088e4ce48cb778ecd080560, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 571dfda52cc874c6394b373ea342c153, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -469,7 +469,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 969716a9b088e4ce48cb778ecd080560, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f77f498b0d4b1469ea63b9688e7210dd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -679,7 +679,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 969716a9b088e4ce48cb778ecd080560, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5853e898b4c404f59a06615d0d4e329d, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -865,7 +865,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 969716a9b088e4ce48cb778ecd080560, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d74c23f631a7422eb7188f3c81fb529, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1037,11 +1037,12 @@ RectTransform:
   m_GameObject: {fileID: 398303361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.029411765, y: 0.029411765, z: 0.029411765}
+  m_LocalScale: {x: 0.032467533, y: 0.032467533, z: 0.032467533}
   m_Children:
   - {fileID: 61544481}
   - {fileID: 860151454}
   - {fileID: 2067536670}
+  - {fileID: 1900979991}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1354,6 +1355,8 @@ GameObject:
   m_Component:
   - component: {fileID: 536042103}
   - component: {fileID: 536042104}
+  - component: {fileID: 536042105}
+  - component: {fileID: 536042106}
   m_Layer: 0
   m_Name: CannonSpinning
   m_TagString: Untagged
@@ -1377,7 +1380,7 @@ Transform:
   - {fileID: 218541186}
   m_Father: {fileID: 1508547799}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!114 &536042104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,6 +1396,41 @@ MonoBehaviour:
   cannon2: {fileID: 262717442}
   cannon3: {fileID: 827135835}
   cannon4: {fileID: 218541187}
+  rotationSpeed: 60
+  shotSpeed: 1
+  rotationDirection: 0
+--- !u!111 &536042105
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536042102}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: d2d1692243f694267a264046af867bd4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &536042106
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 536042102}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a51a807650c34dabbddf01e4aaa8a2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &573636023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1621,7 @@ GameObject:
   - component: {fileID: 860151456}
   - component: {fileID: 860151455}
   m_Layer: 5
-  m_Name: MassProgressBackground
+  m_Name: MassProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,7 +1634,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860151453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -94.625, y: 95, z: 0}
+  m_LocalPosition: {x: -85.625, y: 79, z: 0}
   m_LocalScale: {x: 0.9999, y: 0.9999, z: 0.9999}
   m_Children:
   - {fileID: 1180781647}
@@ -1627,7 +1665,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4e096e8e4092148b5b858a0b2ec30c8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e704c8e15d5a844349ed6c6f8bbb83cd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1771,7 +1809,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 969716a9b088e4ce48cb778ecd080560, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f620fbbe0bbb49279a821a6dbcfb716, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1834,7 +1872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.21379304, a: 1}
+  m_Color: {r: 0.7019608, g: 0.8039216, b: 0.8784314, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2232,7 +2270,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1180781646}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: -63.800003, z: 0}
+  m_LocalPosition: {x: 5, y: -60.800003, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1.0001}
   m_Children: []
   m_Father: {fileID: 860151454}
@@ -2240,7 +2278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 6, y: 11.2}
+  m_AnchoredPosition: {x: 6, y: 14.2}
   m_SizeDelta: {x: 118, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180781648
@@ -2255,7 +2293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.35172412, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.4, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2493,7 +2531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.21379304, a: 1}
+  m_Color: {r: 0.011764706, g: 0.22352941, b: 0.42352942, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2601,7 +2639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.21379304, a: 1}
+  m_Color: {r: 0, g: 0.35686275, b: 0.5882353, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2683,7 +2721,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1508547798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1927671272}
@@ -2706,13 +2744,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   style: 1
   Health: 0
-  attack1FireRate: 3
-  attack2FireRate: 1
-  attack1NumberOfShots: 2
-  attack2NumberOfShots: 2
+  attack1FireRate: 0.3
+  attack2FireRate: 0.1
+  attack1NumberOfShots: 3
+  attack2NumberOfShots: 7
+  timeBetweenAttackPhases: 0.3
   cannonA: {fileID: 1774457781}
   cannonB: {fileID: 342995033}
   cannonS: {fileID: 536042104}
+  attacksBeforeModeSwitch: 20
 --- !u!1001 &1598697896
 Prefab:
   m_ObjectHideFlags: 0
@@ -2863,7 +2903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projSpawn: {fileID: 1774457780}
   player: {fileID: 1845269430}
-  shotSpeed: 0.3
+  shotSpeed: 0.6
   projPrefab: {fileID: 114900839747081898, guid: 1aeb7997552914712b465c6371a19bb4,
     type: 2}
 --- !u!1001 &1787973193
@@ -2988,7 +3028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1845269428
 Transform:
   m_ObjectHideFlags: 0
@@ -3028,7 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5925b8546af1d4d208b7673e8df8bc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: 0
+  fire: 1
   orbit: 1
   progressMassManager: {fileID: 860151457}
   progressWeaponManager: {fileID: 61544484}
@@ -3396,6 +3436,87 @@ Transform:
   m_Father: {fileID: 1228587970}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1900979990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1900979991}
+  - component: {fileID: 1900979994}
+  - component: {fileID: 1900979993}
+  - component: {fileID: 1900979992}
+  m_Layer: 5
+  m_Name: BossProgressBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1900979991
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900979990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 153, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 398303365}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 145, y: 2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1900979992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900979990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: e2b32579e25c34eb5b04ac8e605805e8, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1900979993
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900979990}
+--- !u!114 &1900979994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900979990}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355878857d4f94886846f2b40a6247c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: 0
 --- !u!1 &1914779134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3743,7 +3864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.21379304, a: 1}
+  m_Color: {r: 0.39215687, g: 0.5921569, b: 0.69411767, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3899,7 +4020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2067536670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3958,9 +4079,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1508547800}
-        m_MethodName: Attack2
-        m_Mode: 1
+      - m_Target: {fileID: 1845269430}
+        m_MethodName: IncrementFireRate
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

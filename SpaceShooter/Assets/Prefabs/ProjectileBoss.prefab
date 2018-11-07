@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4143170332793660}
   - component: {fileID: 212759354042393258}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: ProjSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 50330547183847348}
   - component: {fileID: 70073616982786384}
   - component: {fileID: 58441655946534296}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: ProjectileBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535079493801190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ac2a4e414f4b46df80e6859c14aed19, type: 3}
   m_Name: 
@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8459e0ced118040269851968934e54e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2f713388d1ea4405878051f95af43f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
