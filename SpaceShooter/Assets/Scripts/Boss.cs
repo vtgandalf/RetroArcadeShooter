@@ -6,7 +6,8 @@ public enum AttackStyle{
 }
 public class Boss : MonoBehaviour {
 	public AttackStyle style;
-	public int Health;
+	public int initHP;
+	private int currentHP;
 	public float attack1FireRate;
 	public float attack2FireRate;
 	public int attack1NumberOfShots;
@@ -21,12 +22,17 @@ public class Boss : MonoBehaviour {
 	private int shotCounter;
 	private int modeCounter;
 	public int attacksBeforeModeSwitch;
+	public Progress healthBar;
+	private Animation animation;
 	// Use this for initialization
 	void Start () {
+		animation = this.gameObject.GetComponent<Animation>();
+		currentHP = initHP;
 		timer = timeBetweenAttackPhases;
 		modeCounter = 0;
 		shootingTimer = 0f;
 		shotCounter = 0;
+		healthBar.ValueBossHealth((float) initHP,(float) currentHP);
 	}
 	
 	// Update is called once per frame
@@ -40,7 +46,7 @@ public class Boss : MonoBehaviour {
 		{
 			shotCounter = 0;
 			timer = 0f;
-			Debug.LogError(modeCounter);
+			//Debug.LogError(modeCounter);
 			modeCounter++;
 		}
 		if (shotCounter < attack2NumberOfShots && timer >= timeBetweenAttackPhases)
@@ -97,5 +103,17 @@ public class Boss : MonoBehaviour {
 		{
 			cannonS.ToggleRotationDirection();
 		}
+	}
+    
+    public void TakeDmg()
+	{
+		if (currentHP > 0) currentHP--;
+		else 
+		{
+			currentHP = 0;
+			this.gameObject.SetActive(false);
+		}
+		animation.Play("TakeDmg");
+		healthBar.ValueBossHealth((float) initHP,(float) currentHP);
 	}
 }

@@ -137,7 +137,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61544480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.625, y: 79, z: 0}
+  m_LocalPosition: {x: 90.625, y: 95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 221926469}
@@ -572,7 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218541186}
   - component: {fileID: 218541187}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cannon4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262717441}
   - component: {fileID: 262717442}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cannon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -918,7 +918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342995031}
   - component: {fileID: 342995033}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CannonB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ RectTransform:
   m_GameObject: {fileID: 398303361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.032467533, y: 0.032467533, z: 0.032467533}
+  m_LocalScale: {x: 0.029411765, y: 0.029411765, z: 0.029411765}
   m_Children:
   - {fileID: 61544481}
   - {fileID: 860151454}
@@ -1134,7 +1134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410305926}
   - component: {fileID: 410305928}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cannon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1357,7 +1357,7 @@ GameObject:
   - component: {fileID: 536042104}
   - component: {fileID: 536042105}
   - component: {fileID: 536042106}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CannonSpinning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,7 +1474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 827135834}
   - component: {fileID: 827135835}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cannon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1634,7 +1634,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860151453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -85.625, y: 79, z: 0}
+  m_LocalPosition: {x: -94.625, y: 95, z: 0}
   m_LocalScale: {x: 0.9999, y: 0.9999, z: 0.9999}
   m_Children:
   - {fileID: 1180781647}
@@ -2707,7 +2707,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1508547799}
   - component: {fileID: 1508547800}
-  m_Layer: 0
+  - component: {fileID: 1508547801}
+  - component: {fileID: 1508547802}
+  - component: {fileID: 1508547803}
+  m_Layer: 13
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2743,7 +2746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: 1
-  Health: 0
+  initHP: 1000
   attack1FireRate: 0.3
   attack2FireRate: 0.1
   attack1NumberOfShots: 3
@@ -2753,6 +2756,142 @@ MonoBehaviour:
   cannonB: {fileID: 342995033}
   cannonS: {fileID: 536042104}
   attacksBeforeModeSwitch: 20
+  healthBar: {fileID: 1900979994}
+--- !u!68 &1508547801
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508547798}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.011256456, y: 0.6576271}
+  - {x: -0.15723151, y: 0.6563153}
+  - {x: -0.21598104, y: 0.71933746}
+  - {x: -0.22681367, y: 1.1442995}
+  - {x: -0.3909685, y: 1.1481204}
+  - {x: -0.6521083, y: 0.85581446}
+  - {x: -0.6472331, y: 0.699512}
+  - {x: -0.42601502, y: 0.6913891}
+  - {x: -0.33931944, y: 0.5979624}
+  - {x: -0.4058727, y: 0.5092044}
+  - {x: -0.5050111, y: 0.5115533}
+  - {x: -0.75087875, y: 0.2544334}
+  - {x: -0.75232023, y: 0.14917779}
+  - {x: -0.9063056, y: 0.034316063}
+  - {x: -0.89013743, y: 0.39768052}
+  - {x: -0.9164755, y: 0.5206237}
+  - {x: -1.1346763, y: 0.7512655}
+  - {x: -1.2501583, y: 0.8106551}
+  - {x: -1.5611006, y: 0.8133688}
+  - {x: -1.6490804, y: 0.7741227}
+  - {x: -1.6534842, y: 1.0438442}
+  - {x: -1.8180978, y: 1.0653605}
+  - {x: -1.9546623, y: 1.2096128}
+  - {x: -2.056119, y: 1.2005873}
+  - {x: -2.0516512, y: 0.9596491}
+  - {x: -1.8522455, y: 0.5967035}
+  - {x: -1.905433, y: 0.47403908}
+  - {x: -1.9082122, y: -0.06564069}
+  - {x: -1.755819, y: -0.2931025}
+  - {x: -1.7582622, y: -0.69230485}
+  - {x: -1.553458, y: -0.86530924}
+  - {x: -1.2797053, y: -0.8738413}
+  - {x: -1.0803704, y: -0.6999638}
+  - {x: -1.0597363, y: -0.29031897}
+  - {x: -0.9653799, y: -0.19689012}
+  - {x: -0.77049345, y: -0.33691502}
+  - {x: -0.9645898, y: -0.7444954}
+  - {x: -0.9093006, y: -0.877553}
+  - {x: -0.76531553, y: -0.8707552}
+  - {x: -0.5845251, y: -0.51301}
+  - {x: -0.4347179, y: -0.60006547}
+  - {x: -0.42202008, y: -0.7862258}
+  - {x: -0.23930442, y: -1.1952775}
+  - {x: 0.21161771, y: -1.2023082}
+  - {x: 0.4168951, y: -0.8020735}
+  - {x: 0.43291447, y: -0.59845495}
+  - {x: 0.60336417, y: -0.4836023}
+  - {x: 0.8165937, y: -0.86861587}
+  - {x: 0.8841041, y: -0.8602774}
+  - {x: 0.90185964, y: -0.6934099}
+  - {x: 0.7878086, y: -0.39551067}
+  - {x: 0.92698795, y: -0.104381084}
+  - {x: 1.102972, y: -0.2747562}
+  - {x: 1.101176, y: -0.68025875}
+  - {x: 1.3222097, y: -0.8500962}
+  - {x: 1.5051262, y: -0.8499017}
+  - {x: 1.7215446, y: -0.6813226}
+  - {x: 1.7303668, y: -0.19439626}
+  - {x: 1.8496233, y: -0.08895993}
+  - {x: 1.9198205, y: 0.10988712}
+  - {x: 1.9147584, y: 0.41597366}
+  - {x: 1.8346381, y: 0.56845665}
+  - {x: 1.8928603, y: 0.6325388}
+  - {x: 2.0291867, y: 0.92480755}
+  - {x: 2.0268965, y: 1.1967912}
+  - {x: 1.9559069, y: 1.1872292}
+  - {x: 1.8285027, y: 1.0564046}
+  - {x: 1.7033889, y: 1.0567236}
+  - {x: 1.5300417, y: 1.0092497}
+  - {x: 1.5199089, y: 0.80830574}
+  - {x: 1.2390692, y: 0.7946129}
+  - {x: 1.1358409, y: 0.75235176}
+  - {x: 0.95586276, y: 0.5353961}
+  - {x: 0.89201087, y: 0.5343075}
+  - {x: 0.784723, y: 0.6599879}
+  - {x: 0.59671795, y: 0.66222095}
+  - {x: 0.5105717, y: 0.5777545}
+  - {x: 0.5071156, y: 0.52073383}
+  - {x: 0.4049284, y: 0.51599884}
+  - {x: 0.3293994, y: 0.59150076}
+  - {x: 0.444023, y: 0.71277857}
+  - {x: 0.64506644, y: 0.7097297}
+  - {x: 0.6476397, y: 0.89123964}
+  - {x: 0.40860537, y: 1.1390157}
+  - {x: 0.208462, y: 1.1435947}
+  - {x: 0.20796159, y: 0.7171464}
+  - {x: 0.11356671, y: 0.65712166}
+  - {x: -0.015330151, y: 0.6579323}
+--- !u!95 &1508547802
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508547798}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a14fe201e6b794990a99fd32f5becf37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &1508547803
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508547798}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d5e4e019bcdac4613bad9bc2d287efe2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: d5e4e019bcdac4613bad9bc2d287efe2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1598697896
 Prefab:
   m_ObjectHideFlags: 0
@@ -2870,7 +3009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1774457780}
   - component: {fileID: 1774457781}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CannonA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3028,7 +3167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1845269428
 Transform:
   m_ObjectHideFlags: 0
@@ -3069,7 +3208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: 1
-  orbit: 1
+  orbit: 0
   progressMassManager: {fileID: 860151457}
   progressWeaponManager: {fileID: 61544484}
   weaponLevel: 0
@@ -3461,7 +3600,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900979990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 153, z: 0}
+  m_LocalPosition: {x: 0, y: 169, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398303365}
@@ -3511,12 +3650,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900979990}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 355878857d4f94886846f2b40a6247c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bar: 0
+  bar: 2
 --- !u!1 &1914779134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,7 +3719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1927671272}
   - component: {fileID: 1927671273}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3594,7 +3733,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1927671271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1508547799}
@@ -4020,7 +4159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2067536670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4079,9 +4218,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1845269430}
-        m_MethodName: IncrementFireRate
-        m_Mode: 4
+      - m_Target: {fileID: 1508547800}
+        m_MethodName: TakeDmg
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -4,7 +4,7 @@ using System.Collections;
 
 public enum Bar
 {
-	Mass, Weapon
+	Mass, Weapon, BossHealth
 }
 
 public class Progress : MonoBehaviour
@@ -40,6 +40,12 @@ public class Progress : MonoBehaviour
                 foregroundImage.fillAmount = value / 100f;
         }
     }
+    
+	public void ValueBossHealth(float initHP, float currentHP)
+    {      
+		if (foregroundImage != null)
+			foregroundImage.fillAmount = currentHP/initHP;
+    }
 
     void Start()
     {
@@ -61,8 +67,9 @@ public class Progress : MonoBehaviour
 			this.indicatorTripple.SetActive(false);
 			this.indicatorQuad.SetActive(false);
         }
-        foregroundImage = gameObject.GetComponent<Image>();
+        foregroundImage = gameObject.GetComponent<Image>();      
         Value = 0;
+		if (bar == Bar.BossHealth) Value = 100;
     }
     
 	public void WeaponLevelIndicator( WeaponLevel level)

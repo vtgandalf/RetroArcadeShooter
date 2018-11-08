@@ -39,6 +39,25 @@ public class Projectile : MonoBehaviour
 				Destroy(this.gameObject);
 				Destroy(col.gameObject);
 			}
+			if(col.gameObject.layer == LayerMask.NameToLayer("Boss"))
+			{
+				Boss boss = col.transform.GetComponent<Boss>();
+				if (boss != null)
+				{
+					Destroy(this.gameObject);
+					boss.TakeDmg();
+				}
+				else Debug.LogError("boss not detected");
+			}
+		}
+		if (layer == LayerMask.NameToLayer("BossProj"))
+		{
+			if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                if (audioManager != null) audioManager.PlayHit();
+                Destroy(this.gameObject);
+                Destroy(col.gameObject);
+            }
 		}
 		if (col.gameObject.tag == "border")
         {
