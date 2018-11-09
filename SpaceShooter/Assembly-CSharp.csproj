@@ -53,12 +53,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Attractor.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\BackgroundSynchManager.cs" />
      <Compile Include="Assets\Scripts\Boss.cs" />
      <Compile Include="Assets\Scripts\BossCannonType1.cs" />
      <Compile Include="Assets\Scripts\BossCannonType2.cs" />
      <Compile Include="Assets\Scripts\BossSpinningCannon.cs" />
+     <Compile Include="Assets\Scripts\DarkMatterMode.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemySpawn.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawnerGlobal.cs" />
+     <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\Orbit.cs" />
      <Compile Include="Assets\Scripts\OrbitActivation.cs" />

@@ -24,8 +24,10 @@ public class Boss : MonoBehaviour {
 	public int attacksBeforeModeSwitch;
 	public Progress healthBar;
 	private Animation animation;
+	private bool entranceFinished;
 	// Use this for initialization
 	void Start () {
+		entranceFinished = false;
 		animation = this.gameObject.GetComponent<Animation>();
 		currentHP = initHP;
 		timer = timeBetweenAttackPhases;
@@ -33,27 +35,31 @@ public class Boss : MonoBehaviour {
 		shootingTimer = 0f;
 		shotCounter = 0;
 		healthBar.ValueBossHealth((float) initHP,(float) currentHP);
+		animation.Play("BossEntrance");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		ToggleMode();
-        shootingTimer += Time.deltaTime;
+		if(entranceFinished == true)
+		{
+			ToggleMode();
+            shootingTimer += Time.deltaTime;
 
-		if (style == AttackStyle.Aim) attackNumberOfShots = attack1NumberOfShots;
-		else attackNumberOfShots = attack2NumberOfShots;
-		if(shotCounter >= attackNumberOfShots)
-		{
-			shotCounter = 0;
-			timer = 0f;
-			//Debug.LogError(modeCounter);
-			modeCounter++;
-		}
-		if (shotCounter < attack2NumberOfShots && timer >= timeBetweenAttackPhases)
-		{
-			Attacking();
-		}
-		else { timer += Time.deltaTime; }
+            if (style == AttackStyle.Aim) attackNumberOfShots = attack1NumberOfShots;
+            else attackNumberOfShots = attack2NumberOfShots;
+            if (shotCounter >= attackNumberOfShots)
+            {
+                shotCounter = 0;
+                timer = 0f;
+                //Debug.LogError(modeCounter);
+                modeCounter++;
+            }
+            if (shotCounter < attack2NumberOfShots && timer >= timeBetweenAttackPhases)
+            {
+                Attacking();
+            }
+            else { timer += Time.deltaTime; }
+		}      
 	}
 
     public void Attack1()
@@ -108,12 +114,17 @@ public class Boss : MonoBehaviour {
     public void TakeDmg()
 	{
 		if (currentHP > 0) currentHP--;
-		else 
+			else
 		{
 			currentHP = 0;
 			this.gameObject.SetActive(false);
 		}
 		animation.Play("TakeDmg");
-		healthBar.ValueBossHealth((float) initHP,(float) currentHP);
+		healthBar.ValueBossHealth((float)initHP, (float)currentHP);
+	}
+	private void Entrance()
+	{
+		this.entranceFinished = true;
+        healthBar.gameObject.SetActive(true);
 	}
 }
