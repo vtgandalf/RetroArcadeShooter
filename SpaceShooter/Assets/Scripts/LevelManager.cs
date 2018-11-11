@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 	public EnemySpawnerGlobal spawnerGlobal;
 	public DarkMatterMode mode;
 	public Boss boss;
+	public GameObject rotateIndicator;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,9 +18,11 @@ public class LevelManager : MonoBehaviour {
 		if (spawnerGlobal.NrOfEnemiesSpawned >= nrOfEnemiesBeforeBoss)
 		{
 			spawnerGlobal.gameObject.SetActive(false);
+			if (rotateIndicator.activeSelf == false) rotateIndicator.SetActive(true);
 		}
 		if(spawnerGlobal.gameObject.activeSelf == false && mode.DarkMatterModeBool == true)
 		{
+			if (rotateIndicator.activeSelf == true) rotateIndicator.SetActive(false);
 			boss.gameObject.SetActive(true);
 		}
 	}

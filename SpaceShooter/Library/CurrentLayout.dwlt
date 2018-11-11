@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 649
-  m_MinSize: {x: 583, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 579, y: 471}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
   controlID: 55
 --- !u!114 &3
@@ -207,7 +207,7 @@ MonoBehaviour:
     y: 0
     width: 1089
     height: 649
-  m_MinSize: {x: 306, y: 492}
+  m_MinSize: {x: 304, y: 471}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 56
@@ -231,8 +231,8 @@ MonoBehaviour:
     y: 0
     width: 1089
     height: 368
-  m_MinSize: {x: 306, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 304, y: 200}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 57
 --- !u!114 &11
@@ -317,14 +317,14 @@ MonoBehaviour:
     width: 853
     height: 347
   m_SceneLighting: 1
-  lastFramingTime: 8339.738357067108
+  lastFramingTime: 5600.184335947037
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.8762243, y: 2.1216052, z: 0.9355469}
+    m_Target: {x: 3.6492202, y: -0.609615, z: -0.06347971}
     speed: 2
-    m_Value: {x: 1.8762243, y: 2.1216052, z: 0.9355469}
+    m_Value: {x: 3.6492202, y: -0.609615, z: -0.06347971}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -351,9 +351,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.195908
+    m_Target: 8.48643
     speed: 2
-    m_Value: 8.195908
+    m_Value: 8.48643
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -510,18 +510,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 46
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: 46
   m_LastProjectPath: /home/valeri/GIT/RetroArcadeShooter/SpaceShooter
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b6280000
-    m_LastClickedID: 10422
+    m_SelectedIDs: ca280000
+    m_LastClickedID: 10442
     m_ExpandedIDs: 00000000782700002428000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -577,8 +577,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c623000058d0ffff8e270000f027000000000000f2270000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c623000058d0ffff8e270000f027000000000000f2270000e2280000ca270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -665,10 +665,10 @@ MonoBehaviour:
     width: 230
     height: 347
   m_TreeViewState:
-    scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: ca310000d63100005a32000072310000
-    m_LastClickedID: 12658
-    m_ExpandedIDs: c4ecffff5cf0ffff9efbffff00000000b4300000cc300000e4300000f83000000c31000068310000ae310000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e2280000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 022effff1a9effffeeb2ffff9efbffff0000000044290000782900001a2a0000262a00004e2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

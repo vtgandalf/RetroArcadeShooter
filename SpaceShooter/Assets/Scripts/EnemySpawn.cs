@@ -26,6 +26,8 @@ public class EnemySpawn : MonoBehaviour {
 		var unit = (Enemy)Instantiate(enemy, projSpawn.position, projSpawn.rotation);
         // Add velocity to the bullet
         unit.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 1f) * speed;
+		unit.GetComponent<SpriteManager>().mode = parent.mode;
+		unit.GetComponent<ProjManager>().projPrefab.GetComponent<SpriteManager>().mode = parent.mode;
 		parent.IncrementNrOfEnemyesSpawned();
 	}
 

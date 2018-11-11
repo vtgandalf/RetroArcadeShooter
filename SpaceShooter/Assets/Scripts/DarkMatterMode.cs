@@ -5,6 +5,7 @@ using UnityEngine;
 public class DarkMatterMode : MonoBehaviour {
 	public GameObject backgroundNormal;
 	public GameObject backgroundDark;
+	public GameObject weaponBar;
 	private bool darkMatterMode;
 	// Use this for initialization
 	void Start () {
@@ -29,23 +30,47 @@ public class DarkMatterMode : MonoBehaviour {
     private void ChangeMode()
 	{
 		if (Input.deviceOrientation == DeviceOrientation.Portrait)
-        {
-			if (backgroundDark.activeSelf == true) backgroundDark.SetActive(false);
-			if (backgroundNormal.activeSelf == false) 
-			{
-				backgroundNormal.SetActive(true);
-				darkMatterMode = false;
-			}
+        {         
+			if (backgroundDark.activeSelf == true) DisableDark();
+            if (backgroundNormal.activeSelf == false)
+            {
+				EnableNormal();
+                darkMatterMode = false;
+            }
+            Screen.orientation = ScreenOrientation.AutoRotation;
         }
         else if (Input.deviceOrientation == DeviceOrientation.PortraitUpsideDown)
-        {
-            if (backgroundNormal.activeSelf == true) backgroundNormal.SetActive(false);
-			if (backgroundDark.activeSelf == false) 
-			{
-				backgroundDark.SetActive(true);
-				darkMatterMode = true;
-			}
+        {         
+			if (backgroundNormal.activeSelf == true) DisableNormal();
+            if (backgroundDark.activeSelf == false)
+            {
+				EnableDark();
+                darkMatterMode = true;
+            }
+            Screen.orientation = ScreenOrientation.AutoRotation;
         }
+	}
+
+	private void EnableNormal()
+	{
+		backgroundNormal.SetActive(true);
+		if (weaponBar.activeSelf == false) weaponBar.SetActive(true);
+	}
+
+	private void EnableDark()
+	{
+		backgroundDark.SetActive(true);
+		if (weaponBar.activeSelf == true) weaponBar.SetActive(false);
+	}
+
+	private void DisableNormal()
+	{
+		backgroundNormal.SetActive(false);
+	}
+
+	public void DisableDark()
+	{
+		backgroundDark.SetActive(false);
 	}
 
 	public bool DarkMatterModeBool
