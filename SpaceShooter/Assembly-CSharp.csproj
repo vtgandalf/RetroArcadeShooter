@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\EnemySpawnerGlobal.cs" />
      <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\ObjectsManager.cs" />
      <Compile Include="Assets\Scripts\Orbit.cs" />
      <Compile Include="Assets\Scripts\OrbitActivation.cs" />
      <Compile Include="Assets\Scripts\OrbitIndicator.cs" />

@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 	public PickUpManager pickUpManager;
+	public DarkMatterMode mode;
+	public ObjectsManager objectsManager;
 	// Use this for initialization
 	public WeaponLevel weaponLevel = WeaponLevel.Single;
 	void Start () {
-		
+		objectsManager.AddOjbToList(this.gameObject);
+		if (mode.DarkMatterModeBool == true)
+        {
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        }
 	}
 	
 	// Update is called once per frame
@@ -17,6 +24,7 @@ public class Enemy : MonoBehaviour {
 
 	void OnDestroy()
     {
+		objectsManager.RemoveObjFromList(this.gameObject);
 		pickUpManager.Spawn();
     }
 

@@ -6,12 +6,16 @@ public class Attractor : MonoBehaviour
 {
 	public Rigidbody2D rb;
 	private float orbitSpeed = 0f;
+	public ObjectsManager objectsManager;
 
+	void Start()
+	{
+		objectsManager.AddObjToAttractors(this);
+	}
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		Attractor[] attractors = FindObjectsOfType<Attractor>();
-		foreach (Attractor attractor in attractors)
+		foreach (Attractor attractor in objectsManager.Attractors)
 		{
 			if (attractor != this)
 			{
@@ -73,4 +77,9 @@ public class Attractor : MonoBehaviour
 		}
 		else if (rbToAttract.gameObject.GetComponent<Attractor>().enabled != false) Orbit(rbToAttract.transform, speed);      
 	}
+
+	void OnDestroy()
+    {
+		objectsManager.RemoveObjFromAttractors(this);
+    }
 }

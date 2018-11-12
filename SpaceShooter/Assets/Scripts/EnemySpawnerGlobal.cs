@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawnerGlobal : MonoBehaviour {
 	private int nrOfEnemiesSpawned;
 	public DarkMatterMode mode;
+	public ObjectsManager objectsManager;
 	// Use this for initialization
 	void Start () {
 	}

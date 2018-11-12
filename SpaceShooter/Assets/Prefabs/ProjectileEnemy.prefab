@@ -136,7 +136,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -166,7 +166,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1947545320418858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cc131723865a4f968f77a0f3d2e1c33, type: 3}
   m_Name: 
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 50085284766924838}
+  objectsManager: {fileID: 0}
 --- !u!114 &114851006686976616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,6 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c3dfa8e7c5844f487778d0ad8d1eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: {fileID: 0}
+  objectsManager: {fileID: 0}
 --- !u!212 &212456163242755936
 SpriteRenderer:
   m_ObjectHideFlags: 1

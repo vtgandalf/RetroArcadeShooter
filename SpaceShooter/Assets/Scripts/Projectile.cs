@@ -6,10 +6,20 @@ public class Projectile : MonoBehaviour
 {
 	private bool seen = false;
 	private AudioManager audioManager;
+	public DarkMatterMode mode;
+	public ObjectsManager objectsManager;
 	// Use this for initialization
 	void Start()
 	{
+		objectsManager.AddOjbToList(this.gameObject);
+		this.gameObject.GetComponent<Attractor>().objectsManager = objectsManager;
+		//Debug.LogError(this.gameObject.GetComponent<Attractor>());
 		audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
+        if(mode.DarkMatterModeBool == true)
+		{
+			this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+			this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+		}
 	}
 
 	// Update is called once per frame
@@ -64,4 +74,9 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 	}
+
+	void OnDestroy()
+    {
+		objectsManager.RemoveObjFromList(this.gameObject);
+    }
 }

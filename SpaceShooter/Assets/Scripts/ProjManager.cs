@@ -17,6 +17,8 @@ public class ProjManager : MonoBehaviour {
 	public Projectile projPrefab;
 	public float weaponOffset = 0.25f;
 	public float weaponAngle = 0.25f;
+	public ObjectsManager objectsManager;
+	public DarkMatterMode mode;
     // Use this for initialization
     void Start()
     {
@@ -51,11 +53,14 @@ public class ProjManager : MonoBehaviour {
     {
         // Create the Bullet from the Bullet Prefab
 		var missile = (Projectile)Instantiate(projPrefab,projSpawn.position,projSpawn.rotation);
+
+		SetupObj(missile);
+
         // Add velocity to the bullet
 		missile.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,1f) * shotSpeed;
 
 		//play fire sound
-		audioManager.PlayGun();
+		//audioManager.PlayGun();
     }
 
 	void FireDouble()
@@ -128,5 +133,12 @@ public class ProjManager : MonoBehaviour {
 			}
         }
 		time += Time.deltaTime;
+	}
+
+	private void SetupObj(Projectile proj)
+	{
+		proj.mode = mode;
+		proj.objectsManager = objectsManager;
+		//objectsManager.AddOjbToList(proj.gameObject);
 	}
 }
