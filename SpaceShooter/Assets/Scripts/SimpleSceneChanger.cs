@@ -17,6 +17,6 @@ public class SimpleSceneChanger : MonoBehaviour {
 
     public void OpenDemo()
 	{
-		SceneManager.LoadScene("Scene2", LoadSceneMode.Single);
+		SceneManager.LoadScene("FirstLevel", LoadSceneMode.Single);
 	}
 }

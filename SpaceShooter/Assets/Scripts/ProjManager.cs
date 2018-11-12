@@ -119,10 +119,25 @@ public class ProjManager : MonoBehaviour {
 
 			if (player != null)
 			{
-				if (player.WeaponLevel == WeaponLevel.Single) FireSingle();
-                else if (player.WeaponLevel == WeaponLevel.Dual) FireDouble();
-                else if (player.WeaponLevel == WeaponLevel.Tripple) FireTripple();  
-				else if (player.WeaponLevel == WeaponLevel.Quad) FireQuad(); 
+				if(mode.DarkMatterModeBool == true)
+				{
+					player.DecrementMass(0.25f);
+					if(player.MassProgressCounter > 0)
+					{
+
+                        if (player.WeaponLevel == WeaponLevel.Single) FireSingle();
+                        else if (player.WeaponLevel == WeaponLevel.Dual) FireDouble();
+                        else if (player.WeaponLevel == WeaponLevel.Tripple) FireTripple();
+                        else if (player.WeaponLevel == WeaponLevel.Quad) FireQuad();
+					}
+				}
+				else if(mode.DarkMatterModeBool == false)
+				{               
+                    if (player.WeaponLevel == WeaponLevel.Single) FireSingle();
+                    else if (player.WeaponLevel == WeaponLevel.Dual) FireDouble();
+                    else if (player.WeaponLevel == WeaponLevel.Tripple) FireTripple();
+                    else if (player.WeaponLevel == WeaponLevel.Quad) FireQuad();
+				}
 			}
 			else if (enemy != null)
 			{

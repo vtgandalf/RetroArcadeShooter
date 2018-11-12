@@ -137,7 +137,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61544480}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.91406, y: 86.625, z: 0}
+  m_LocalPosition: {x: 64.609375, y: 48.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 221926469}
@@ -549,7 +549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &125891501
 Transform:
   m_ObjectHideFlags: 0
@@ -1059,7 +1059,7 @@ RectTransform:
   m_GameObject: {fileID: 398303361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.030935809, y: 0.030935809, z: 0.030935809}
+  m_LocalScale: {x: 0.040404044, y: 0.040404044, z: 0.040404044}
   m_Children:
   - {fileID: 61544481}
   - {fileID: 860151454}
@@ -1718,7 +1718,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860151453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -89.91406, y: 86.625, z: 0}
+  m_LocalPosition: {x: -68.609375, y: 48.75, z: 0}
   m_LocalScale: {x: 0.9999, y: 0.9999, z: 0.9999}
   m_Children:
   - {fileID: 1180781647}
@@ -3611,10 +3611,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire: 0
-  orbit: 1
+  orbit: 0
   progressMassManager: {fileID: 860151457}
   progressWeaponManager: {fileID: 61544484}
-  weaponLevel: 0
+  weaponLevel: 2
   projManager: {fileID: 1845269435}
 --- !u!60 &1845269431
 PolygonCollider2D:
@@ -3794,7 +3794,7 @@ MonoBehaviour:
   weaponOffset: 0.25
   weaponAngle: 0.25
   objectsManager: {fileID: 0}
-  mode: {fileID: 0}
+  mode: {fileID: 1244771061}
 --- !u!1 &1861201563
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,7 +4009,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900979990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 160.625, z: 0}
+  m_LocalPosition: {x: 0, y: 122.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398303365}
@@ -4600,7 +4600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2067536670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4618,7 +4618,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 58, y: -99}
-  m_SizeDelta: {x: 44.75, y: 26.6}
+  m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2067536671
 MonoBehaviour:
@@ -4659,9 +4659,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1508547800}
-        m_MethodName: TakeDmg
-        m_Mode: 1
+      - m_Target: {fileID: 1845269430}
+        m_MethodName: IncrementFireRate
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

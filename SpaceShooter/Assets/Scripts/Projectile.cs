@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour
 			{
 				if (audioManager != null) audioManager.PlayHit();
 				Destroy(this.gameObject);
-				Destroy(col.gameObject);
+				Destroy(col.transform.parent.gameObject);
 			}
 			if(col.gameObject.layer == LayerMask.NameToLayer("Boss"))
 			{

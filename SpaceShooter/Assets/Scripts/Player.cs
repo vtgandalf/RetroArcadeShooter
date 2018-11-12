@@ -84,6 +84,17 @@ public class Player : MonoBehaviour {
 		}
 		progressMassManager.Value = MassProgressCounter;
 	}
+
+	public void DecrementMass(float step)
+    {
+        if (rb != null && MassProgressCounter > 0)
+        {
+            rb.mass = rb.mass - step/2;
+            OrbitRange -= 0.05f/2;
+            MassProgressCounter -= 10/2;
+        }
+        progressMassManager.Value = MassProgressCounter;
+    }
     
     public void IncrementFireRate(float step)
 	{
