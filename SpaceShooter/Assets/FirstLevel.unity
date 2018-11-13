@@ -549,7 +549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &125891501
 Transform:
   m_ObjectHideFlags: 0
@@ -626,6 +626,7 @@ MonoBehaviour:
   shotSpeed: 0.3
   projPrefab: {fileID: 114900839747081898, guid: 1aeb7997552914712b465c6371a19bb4,
     type: 2}
+  objectsManager: {fileID: 0}
 --- !u!1 &221926468
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +817,7 @@ MonoBehaviour:
   shotSpeed: 0.3
   projPrefab: {fileID: 114900839747081898, guid: 1aeb7997552914712b465c6371a19bb4,
     type: 2}
+  objectsManager: {fileID: 0}
 --- !u!1 &294484973
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +978,7 @@ MonoBehaviour:
   shotSpeed: 0.6
   projPrefab: {fileID: 114900839747081898, guid: 1aeb7997552914712b465c6371a19bb4,
     type: 2}
+  objectsManager: {fileID: 0}
 --- !u!1 &398303361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1237,7 @@ MonoBehaviour:
   shotSpeed: 0.3
   projPrefab: {fileID: 114900839747081898, guid: 1aeb7997552914712b465c6371a19bb4,
     type: 2}
+  objectsManager: {fileID: 0}
 --- !u!1 &470204482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1486,7 @@ MonoBehaviour:
   rotationSpeed: 60
   shotSpeed: 1
   rotationDirection: 0
+  objectsManager: {fileID: 0}
 --- !u!111 &536042105
 Animation:
   m_ObjectHideFlags: 0
@@ -1593,6 +1598,7 @@ MonoBehaviour:
   shotSpeed: 0.3
   projPrefab: {fileID: 114900839747081898, guid: 1aeb7997552914712b465c6371a19bb4,
     type: 2}
+  objectsManager: {fileID: 0}
 --- !u!1 &829914404
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,11 +3107,15 @@ MonoBehaviour:
   attack1NumberOfShots: 3
   attack2NumberOfShots: 7
   timeBetweenAttackPhases: 0.3
+  delayFromSpinToAim: 5
+  delayFromAimToSpin: 2
   cannonA: {fileID: 1774457781}
   cannonB: {fileID: 342995033}
   cannonS: {fileID: 536042104}
   attacksBeforeModeSwitch: 20
   healthBar: {fileID: 1900979994}
+  objectsManager: {fileID: 405699575}
+  player: {fileID: 1845269430}
 --- !u!68 &1508547801
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3386,6 +3396,7 @@ MonoBehaviour:
   mode: {fileID: 1244771061}
   boss: {fileID: 1508547800}
   rotateIndicator: {fileID: 1090489626}
+  timeBeforeBoss: 10
 --- !u!4 &1751274893
 Transform:
   m_ObjectHideFlags: 0
@@ -3444,6 +3455,7 @@ MonoBehaviour:
   shotSpeed: 0.6
   projPrefab: {fileID: 114900839747081898, guid: 1aeb7997552914712b465c6371a19bb4,
     type: 2}
+  objectsManager: {fileID: 0}
 --- !u!1001 &1787973193
 Prefab:
   m_ObjectHideFlags: 0
@@ -3610,7 +3622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5925b8546af1d4d208b7673e8df8bc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: 0
+  fire: 1
   orbit: 0
   progressMassManager: {fileID: 860151457}
   progressWeaponManager: {fileID: 61544484}
@@ -4600,7 +4612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2067536670
 RectTransform:
   m_ObjectHideFlags: 0

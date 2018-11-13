@@ -19,7 +19,7 @@ public class OrbitActivation : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("collider");
+        //Debug.Log("collider");
         LayerMask layer = this.gameObject.layer;
 		if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {

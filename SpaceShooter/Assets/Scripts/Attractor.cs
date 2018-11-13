@@ -7,21 +7,25 @@ public class Attractor : MonoBehaviour
 	public Rigidbody2D rb;
 	private float orbitSpeed = 0f;
 	public ObjectsManager objectsManager;
+	private bool hasBeenInOrbit = false;
 
 	void Start()
 	{
-		objectsManager.AddObjToAttractors(this);
+		if (objectsManager != null) objectsManager.AddObjToAttractors(this);
 	}
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		foreach (Attractor attractor in objectsManager.Attractors)
+		if (objectsManager != null)
 		{
-			if (attractor != this)
-			{
-				Attract(attractor);
-			}
-		}
+			foreach (Attractor attractor in objectsManager.Attractors)
+            {
+                if (attractor != this)
+                {
+                    Attract(attractor);
+                }
+            }
+		}      
 	}
 
 	void Attract(Attractor objToAttract)
@@ -41,7 +45,7 @@ public class Attractor : MonoBehaviour
 			{
 				rbToAttract.AddForce(force);
 			}
-			else if (this.GetComponent<Player>().orbit == true && objToAttract.gameObject.layer != 11)
+			else if (this.GetComponent<Player>().orbit == true && objToAttract.gameObject.layer != 11 && objToAttract.gameObject.GetComponent<Attractor>().hasBeenInOrbit != true)
 			{
 				objToAttract.gameObject.layer = 9;
 				objToAttract.gameObject.transform.SetParent(transform);
@@ -69,9 +73,11 @@ public class Attractor : MonoBehaviour
 		if ((trigY > 0 && trigY < 0.05) && trigX < 0)
 		{
 			rbToAttract.velocity = new Vector2(0, 1f) * speed;
-			if (rbToAttract.gameObject.GetComponent<Attractor>())
+			Attractor attractorToAttract = rbToAttract.gameObject.GetComponent<Attractor>();
+			if (attractorToAttract)
 			{
-				rbToAttract.gameObject.GetComponent<Attractor>().enabled = false;
+				attractorToAttract.enabled = false;
+				attractorToAttract.hasBeenInOrbit = true;
 				rbToAttract.gameObject.transform.parent = null;
 			}
 		}
@@ -80,6 +86,6 @@ public class Attractor : MonoBehaviour
 
 	void OnDestroy()
     {
-		objectsManager.RemoveObjFromAttractors(this);
+		if (objectsManager != null) objectsManager.RemoveObjFromAttractors(this);
     }
 }

@@ -11,11 +11,11 @@ public class Projectile : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		objectsManager.AddOjbToList(this.gameObject);
-		this.gameObject.GetComponent<Attractor>().objectsManager = objectsManager;
+		if(mode != null && objectsManager != null) objectsManager.AddOjbToList(this.gameObject);
+		if(objectsManager != null) this.gameObject.GetComponent<Attractor>().objectsManager = objectsManager;
 		//Debug.LogError(this.gameObject.GetComponent<Attractor>());
 		audioManager = (AudioManager)FindObjectOfType(typeof(AudioManager));
-        if(mode.DarkMatterModeBool == true)
+        if(mode != null && mode.DarkMatterModeBool == true)
 		{
 			this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
 			this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
@@ -57,7 +57,7 @@ public class Projectile : MonoBehaviour
 					Destroy(this.gameObject);
 					boss.TakeDmg();
 				}
-				else Debug.LogError("boss not detected");
+				//else Debug.LogError("boss not detected");
 			}
 		}
 		if (layer == LayerMask.NameToLayer("BossProj"))
@@ -77,6 +77,6 @@ public class Projectile : MonoBehaviour
 
 	void OnDestroy()
     {
-		objectsManager.RemoveObjFromList(this.gameObject);
+		if (mode != null && objectsManager != null) objectsManager.RemoveObjFromList(this.gameObject);
     }
 }

@@ -6,6 +6,7 @@ public enum AttackStyle{
 }
 public class Boss : MonoBehaviour {
 	public AttackStyle style;
+	private AttackStyle lastStyle;
 	public int initHP;
 	private int currentHP;
 	public float attack1FireRate;
@@ -16,6 +17,8 @@ public class Boss : MonoBehaviour {
 	public float timeBetweenAttackPhases;
 	private float timer;
 	private float shootingTimer;
+	public int delayFromSpinToAim;
+	public int delayFromAimToSpin;
 	public BossCannonType1 cannonA;
 	public BossCannonType1 cannonB;
 	public BossSpinningCannon cannonS;
@@ -25,6 +28,10 @@ public class Boss : MonoBehaviour {
 	public Progress healthBar;
 	private Animation animation;
 	private bool entranceFinished;
+	public ObjectsManager objectsManager;
+	public Player player;
+	private GameObject playerOrbit;
+
 	// Use this for initialization
 	void Start () {
 		entranceFinished = false;
@@ -34,8 +41,14 @@ public class Boss : MonoBehaviour {
 		modeCounter = 0;
 		shootingTimer = 0f;
 		shotCounter = 0;
+		lastStyle = style;
 		healthBar.ValueBossHealth((float) initHP,(float) currentHP);
 		animation.Play("BossEntrance");
+		cannonA.objectsManager = objectsManager;
+		cannonB.objectsManager = objectsManager;
+		cannonS.objectsManager = objectsManager;
+		playerOrbit = player.gameObject.transform.GetChild(0).gameObject;
+		playerOrbit.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -94,6 +107,7 @@ public class Boss : MonoBehaviour {
                 }
                 break;
         }
+		lastStyle = style;
 	}
 
 	public void ToggleMode()
@@ -101,9 +115,17 @@ public class Boss : MonoBehaviour {
 		if(modeCounter >= attacksBeforeModeSwitch)
 		{
 			modeCounter = 0;
-			timer = -2;
-			if (style == AttackStyle.Aim) style = AttackStyle.Spin;
-			else style = AttackStyle.Aim;
+			//timer = -2;
+			if (style == AttackStyle.Aim) 
+			{
+				style = AttackStyle.Spin;
+				timer = -delayFromAimToSpin;
+			}
+			else
+			{
+				style = AttackStyle.Aim;
+				timer = -delayFromSpinToAim;
+			} 
 		}
 		if(modeCounter == attacksBeforeModeSwitch/2 && shotCounter >= attackNumberOfShots)
 		{
@@ -117,11 +139,13 @@ public class Boss : MonoBehaviour {
 			else
 		{
 			currentHP = 0;
+			playerOrbit.SetActive(true);
 			this.gameObject.SetActive(false);
 		}
 		animation.Play("TakeDmg");
 		healthBar.ValueBossHealth((float)initHP, (float)currentHP);
 	}
+
 	private void Entrance()
 	{
 		this.entranceFinished = true;

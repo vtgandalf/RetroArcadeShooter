@@ -13,6 +13,7 @@ public class BossSpinningCannon : MonoBehaviour {
 	public float rotationSpeed;
 	public float shotSpeed;
 	public RotationDirection rotationDirection;
+	public ObjectsManager objectsManager;
 	// Use this for initialization
 	void Start () {
 		rotationDirection = RotationDirection.ClockWise;
@@ -20,6 +21,10 @@ public class BossSpinningCannon : MonoBehaviour {
 		cannon2.shotSpeed = shotSpeed;
 		cannon3.shotSpeed = shotSpeed;
 		cannon4.shotSpeed = shotSpeed;
+		cannon1.objectsManager = objectsManager;
+		cannon2.objectsManager = objectsManager;
+		cannon3.objectsManager = objectsManager;
+		cannon4.objectsManager = objectsManager;
 	}
 	
 	// Update is called once per frame
