@@ -9,6 +9,7 @@ public class PickUpManager : MonoBehaviour {
     public AudioManager audioManager;
 	public PickUp pickUpPrefabWeapon;
 	public PickUp pickUpPrefabDarkMatter;
+
     // Use this for initialization
     void Start()
     {

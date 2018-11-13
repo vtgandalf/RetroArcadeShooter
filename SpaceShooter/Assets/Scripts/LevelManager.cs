@@ -10,6 +10,32 @@ public class LevelManager : MonoBehaviour {
 	public GameObject rotateIndicator;
 	public float timeBeforeBoss;
 	private float timer;
+
+	public GameObject player;
+    public GameObject enemySpawner;
+    public GameObject levelUI;
+    public GameObject controlsUI;
+    
+	public void StartLevelSingleFingerMode()
+	{
+		StartLevel(MovementStyle.SingleFInger);
+	}
+
+	public void StartLevelDualFingerMode()
+    {
+		StartLevel(MovementStyle.TwoFinger);
+    }
+
+	private void StartLevel(MovementStyle movementStyle)
+    {
+        controlsUI.SetActive(false);
+        player.SetActive(true);
+		Movement movement = player.GetComponent<Movement>();
+		if (movement != null) movement.movementStyle = movementStyle;      
+        levelUI.SetActive(true);
+        enemySpawner.SetActive(true);
+    }
+
 	// Use this for initialization
 	void Start () {
 		timer = 0;

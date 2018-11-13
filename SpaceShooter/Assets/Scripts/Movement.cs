@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum MovementStyle{
+	TwoFinger, SingleFInger
+}
+
 public class Movement : MonoBehaviour {
 
 	public Player player;
@@ -9,6 +13,7 @@ public class Movement : MonoBehaviour {
 	float xDif, yDif, minX, minY, maxX, maxY;
 	Vector3 pos;
 	private float tapTimer;
+	public MovementStyle movementStyle;
        
 	// Use this for initialization
 	void Start () {
@@ -24,7 +29,15 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		MovementStyle2();
+		switch(movementStyle)
+		{
+			case MovementStyle.SingleFInger:
+				MovementStyle2();
+				break;
+			case MovementStyle.TwoFinger:
+				MovementStyle1();
+				break;
+		}
 	}
 
     private void MovementStyle1()
