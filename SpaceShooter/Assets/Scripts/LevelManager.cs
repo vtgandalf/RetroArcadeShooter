@@ -8,9 +8,11 @@ public class LevelManager : MonoBehaviour {
 	public DarkMatterMode mode;
 	public Boss boss;
 	public GameObject rotateIndicator;
+	private Animation animationIndicator;
 	public float timeBeforeBoss;
 	private float timer;
 
+	private Player playerScript;
 	public GameObject player;
     public GameObject enemySpawner;
     public GameObject levelUI;
@@ -38,6 +40,8 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		playerScript = player.GetComponent<Player>();
+		animationIndicator = rotateIndicator.gameObject.GetComponent<Animation>();
 		timer = 0;
 	}
 	
@@ -53,11 +57,23 @@ public class LevelManager : MonoBehaviour {
 			timer += Time.deltaTime;
 			if(timer >= timeBeforeBoss)
 			{
-				if (rotateIndicator.activeSelf == false) rotateIndicator.SetActive(true);
+				if (rotateIndicator.activeSelf == false) 
+				{
+					rotateIndicator.SetActive(true);
+				}
+				if (mode.DarkMatterModeBool == false && playerScript.MassProgressCounter<=0 && boss.gameObject.activeSelf)
+				{
+					if (rotateIndicator.activeSelf == true) rotateIndicator.SetActive(false);
+                    boss.gameObject.SetActive(true);
+				}
                 if (mode.DarkMatterModeBool == true)
 				{
 					if (rotateIndicator.activeSelf == true) rotateIndicator.SetActive(false);
 					boss.gameObject.SetActive(true);
+					if (playerScript.MassProgressCounter<=0 && rotateIndicator.activeSelf == false)
+					{
+						rotateIndicator.SetActive(true);
+					}
 				}
 			}
 		}

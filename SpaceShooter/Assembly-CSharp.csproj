@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Attractor.cs" />
+     <Compile Include="Assets\Scripts\AudioBossTheme.cs" />
+     <Compile Include="Assets\Scripts\AudioIndicator.cs" />
+     <Compile Include="Assets\Scripts\AudioMainTheme.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\BackgroundSynchManager.cs" />
      <Compile Include="Assets\Scripts\Boss.cs" />

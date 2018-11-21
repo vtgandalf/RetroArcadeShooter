@@ -84,7 +84,6 @@ public class Movement : MonoBehaviour {
 		if (Input.touchCount > 0)
         {
 			tapTimer += Time.deltaTime;
-			Debug.LogError(tapTimer);
             pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {

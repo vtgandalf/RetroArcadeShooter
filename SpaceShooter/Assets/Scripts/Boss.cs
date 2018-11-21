@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public enum AttackStyle{
 	Aim, Spin
 }
@@ -31,9 +33,15 @@ public class Boss : MonoBehaviour {
 	public ObjectsManager objectsManager;
 	public Player player;
 	private GameObject playerOrbit;
+	public AudioBossTheme audioManagerBoss;
+	public AudioMainTheme audioManagerMain;
+	private bool entranceDone;
 
 	// Use this for initialization
 	void Start () {
+		entranceDone = false;
+		audioManagerBoss.gameObject.SetActive(true);
+		audioManagerMain.gameObject.SetActive(false);
 		entranceFinished = false;
 		animation = this.gameObject.GetComponent<Animation>();
 		currentHP = initHP;
@@ -90,6 +98,7 @@ public class Boss : MonoBehaviour {
 
 	public void Attacking()
 	{
+		if (entranceDone == false) entranceDone = true;
 		switch (style)
         {
             case AttackStyle.Aim:
@@ -141,6 +150,7 @@ public class Boss : MonoBehaviour {
 			currentHP = 0;
 			playerOrbit.SetActive(true);
 			this.gameObject.SetActive(false);
+			SceneManager.LoadScene("menuBase", LoadSceneMode.Single);
 		}
 		animation.Play("TakeDmg");
 		healthBar.ValueBossHealth((float)initHP, (float)currentHP);
@@ -150,5 +160,20 @@ public class Boss : MonoBehaviour {
 	{
 		this.entranceFinished = true;
         healthBar.gameObject.SetActive(true);
+	}
+    
+	public int CurrentHP
+	{
+		get {return this.currentHP;}
+	}
+
+    public int StartingHP
+	{
+		get { return this.initHP; }
+	}
+
+    public bool EntranceDone
+	{
+		get { return this.entranceDone; }
 	}
 }

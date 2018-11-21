@@ -55,7 +55,7 @@ public class Projectile : MonoBehaviour
 				if (boss != null)
 				{
 					Destroy(this.gameObject);
-					boss.TakeDmg();
+					if(boss.EntranceDone) boss.TakeDmg();
 				}
 				//else Debug.LogError("boss not detected");
 			}
