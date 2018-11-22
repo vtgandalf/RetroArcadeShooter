@@ -37,8 +37,18 @@ public class PickUp : MonoBehaviour {
             {
                 if (audioManager != null) audioManager.PlayHit();
                 Destroy(this.gameObject);
-				if (type == FunctionTypes.DarkMatter) player.IncrementMass(darkMatterStep);
-				if (type == FunctionTypes.Weapon) player.IncrementFireRate(weaponStep);
+				if (type == FunctionTypes.DarkMatter) 
+				{
+					//x2 only for demo
+					player.IncrementMass(darkMatterStep);
+					player.IncrementMass(darkMatterStep);
+				}
+				if (type == FunctionTypes.Weapon)
+				{
+					//x2 only for demo
+					player.IncrementFireRate(weaponStep);
+					player.IncrementFireRate(weaponStep);
+				}
             }
         }
 		if (col.gameObject.tag == "border")

@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{31EA003C-1CF9-D946-A919-8AC5ED6BE76A}|Unit Tests">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickUp.cs">
     <Files>
       <File FileName="Assets/Scripts/Boss.cs" Line="3" Column="19" />
       <File FileName="Assets/Scripts/Projectile.cs" Line="58" Column="28" />
       <File FileName="Assets/Scripts/Player.cs" Line="4" Column="35" />
+      <File FileName="Assets/Scripts/PickUp.cs" Line="48" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

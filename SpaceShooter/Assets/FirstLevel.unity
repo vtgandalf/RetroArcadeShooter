@@ -519,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &125891501
 Transform:
   m_ObjectHideFlags: 0
@@ -4507,7 +4507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5925b8546af1d4d208b7673e8df8bc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: 1
+  fire: 0
   orbit: 0
   progressMassManager: {fileID: 860151457}
   progressWeaponManager: {fileID: 61544484}

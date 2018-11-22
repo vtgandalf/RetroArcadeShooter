@@ -520,8 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f91364e205974d6dbd40cf950b4e9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  synchManager: {fileID: 0}
-  type: 0
+  synchManager: {fileID: 1228587971}
+  type: 2
 --- !u!23 &829914407
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1076169750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 73.75, z: 0.99998474}
+  m_LocalPosition: {x: 0, y: 61, z: 0.99998474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2069129002}
@@ -821,6 +821,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1228587970}
+  - component: {fileID: 1228587971}
   m_Layer: 0
   m_Name: Enviroment
   m_TagString: Untagged
@@ -845,6 +846,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1228587971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1228587969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190ec539247f441778b4eb34272c5a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMid: 140
+  speedFore: 17
+  speedBack: 30
 --- !u!1 &1264642000
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +885,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264642000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -73.75, z: 0}
+  m_LocalPosition: {x: 0, y: -61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441710611}
@@ -1017,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1845269430}
   orbit: {fileID: 1137273906}
+  movementStyle: 0
 --- !u!114 &1845269430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,6 +1118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1845269432}
+  objectsManager: {fileID: 0}
 --- !u!120 &1845269434
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1210,6 +1227,8 @@ MonoBehaviour:
     type: 2}
   weaponOffset: 0.25
   weaponAngle: 0.25
+  objectsManager: {fileID: 0}
+  mode: {fileID: 0}
 --- !u!1 &1893296581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f91364e205974d6dbd40cf950b4e9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  synchManager: {fileID: 0}
+  synchManager: {fileID: 1228587971}
   type: 0
 --- !u!23 &1893296583
 MeshRenderer:
@@ -1433,8 +1452,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f91364e205974d6dbd40cf950b4e9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  synchManager: {fileID: 0}
-  type: 0
+  synchManager: {fileID: 1228587971}
+  type: 1
 --- !u!23 &2046443162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1573,7 +1592,7 @@ RectTransform:
   m_GameObject: {fileID: 2069128998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9}
-  m_LocalScale: {x: 0.040404044, y: 0.040404044, z: 0.040404044}
+  m_LocalScale: {x: 0.045045044, y: 0.045045044, z: 0.045045044}
   m_Children:
   - {fileID: 1076169751}
   - {fileID: 1264642001}
